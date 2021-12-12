@@ -4,23 +4,24 @@ body {
 }
 
 #title {
-	position: absolute;
+	position: absolute;   /* 绝对定位 相对于整个页面 */
 	width: 40%;
 	height: 10%;
-	top: 0;
-	left: 30%;
-	color: white;
-	font-size: 38px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	top: 0; 
+	left: 30%;   /* 确定了width 和 left 会自动确定 right */
+	/* background: #3A7734  确定了body的背景色 这里就不用再指定背景色 */
+	color: white;   /* 字体颜色 */
+	font-size: 38px;  /* 字体大小 */
+	display: flex;  /* 弹性布局 */
+	align-items: center;  /* 水平方向 居中 */
+	justify-content: center; /* 竖直方向 居中 */
 }
 
 #tim {
 	position: absolute;
 	height: 10%;
 	top: 5%;
-	right: 2%;
+	right: 5%;
 	color: #3A7734;
 	font-size: 20px;
 }
@@ -69,7 +70,7 @@ body {
 	left: 0%;
 }
 
-#l2 {
+#L2 {
 	position: absolute;
 	width: 30%;
 	height: 45%;
