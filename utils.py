@@ -38,18 +38,12 @@ def query(sql,*args):
     close_conn(conn, cursor)
     return res
 
-def get_c1_data():
+def C1_data():
     """
     :return: 返回大屏div id=c1 的数据
     """
     # 因为会更新多次数据，取时间戳最新的那组数据
-    sql = "select sum(confirm)," \
-          "(select suspect from history order by ds desc limit 1)," \
-          "sum(heal)," \
-          "sum(dead) " \
-          "from details " \
-          "where update_time=(select update_time from details order by update_time desc limit 1) "
-
+    sql = "select * from cumulative order by id desc limit 1"
     res = query(sql)
     res_list = [str(i) for i in res[0]]
     res_tuple = tuple(res_list)
@@ -64,8 +58,8 @@ def get_c2_data():
     res = query(sql)
     return res
 
-def get_l1_data():
-  sql = "select ds,confirm,suspect,heal,dead from history"
+def L1_data():
+  sql = "select * from cumulative"
   res = query(sql)
   return res
 
@@ -73,7 +67,6 @@ def L2_data():
   sql = "SELECT * FROM `new_trend`"
   res = query(sql)
   return res
-
 
 
 def get_r1_data():
