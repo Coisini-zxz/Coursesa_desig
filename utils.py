@@ -1,7 +1,5 @@
 import time
-
 import pymysql
-
 
 def get_time():
     time_str =  time.strftime("%Y{}%m{}%d{} %X")
@@ -51,7 +49,6 @@ def C1_data():
     res_tuple = tuple(res_list)
     return res_tuple
 
-
 def C2_data():
     # 因为会更新多次数据，取时间戳最新的那组数据
     sql = "select * from C2"
@@ -59,25 +56,29 @@ def C2_data():
     return res
 
 def L1_data():
-    sql = "select * from L1"
-    res = query(sql)
+  sql = "select * from L1"
+  res = query(sql)
   return res
 
 def L2_data():
-    sql = "SELECT * FROM `L2`"
-    res = query(sql)
+  sql = "SELECT * FROM `L2`"
+  res = query(sql)
   return res
 
 
-def get_r1_data():
-    day = time.localtime().tm_yday
-    progress = (day/365)*100
-    progress = '%.2f' % progress
-    return progress
+def R1_data():
+    sql = "SELECT * FROM `r1`"
+    res = query(sql)
+    return res
+
+
+def R2_data():
+    sql = "SELECT 国家, Cumulative_diagnosis FROM `r2`"
+    res = query(sql)
+    return res
 
 #返回最近的30条热搜
 def get_r2_data():
     sql = 'select content from guonei_dynamic order by dt asc limit 30'
     res = query(sql)
     return res
-

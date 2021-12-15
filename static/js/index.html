@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ECharts</title>
+    <!-- 引入刚刚下载的 ECharts 文件 -->
+    <script src="../js/echarts.js"></script>
+    <script src="../js/jquery.min.js"></script>
+</head>
+<body style="height: 800px; margin: 0">
+<div id="container" style="height: 100%"></div>
+
+
+</body>
+</html>
+<script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+
+    var option;
+
+
+
+    $.get(
+        '../json/data.json',
+        function (_rawData) {
+            run(_rawData);
+        }
+    );
+    function run(_rawData) {
+        // var countries = ['Australia', 'Canada', 'China', 'Cuba', 'Finland', 'France', 'Germany', 'Iceland', 'India', 'Japan', 'North Korea', 'South Korea', 'New Zealand', 'Norway', 'Poland', 'Russia', 'Turkey', 'United Kingdom', 'United States'];
+        const countries = [
+            '澳大利亚',
+            '巴西',
+            '俄罗斯',
+            '法国',
+            '韩国',
+            '加拿大',
+            '美国',
+            '日本',
+            '英国（含北爱尔兰）'
+        ];
+        const datasetWithFilters = [];
+        const seriesList = [];
+        echarts.util.each(countries, function (country) {
+            var datasetId = 'dataset_' + country;
+            datasetWithFilters.push({
+                id: datasetId,
+                fromDatasetId: 'dataset_raw',
+                transform: {
+                    type: 'filter',
+                    config: {
+                        and: [
+                            { dimension: 'Year', gte: 20200127 },
+                            { dimension: 'Country', '=': country }
+                        ]
+                    }
+                }
+            });
+            seriesList.push({
+                type: 'line',
+                datasetId: datasetId,
+                showSymbol: false,
+                name: country,
+                endLabel: {
+                    show: true,
+                    formatter: function (params) {
+                        return params.value[1] + ': ' + params.value[0];
+                    }
+                },
+                labelLayout: {
+                    moveOverlap: 'shiftY'
+                },
+                emphasis: {
+                    focus: 'series'
+                },
+                encode: {
+                    x: 'Year',
+                    y: 'Number',
+                    label: ['Country', 'Number'],
+                    itemName: 'Year',
+                    tooltip: ['Number']
+                }
+            });
+        });
+        option = {
+            animationDuration: 10000,
+            dataset: [
+                {
+                    id: 'dataset_raw',
+                    source: _rawData
+                },
+                ...datasetWithFilters
+            ],
+            title: {
+                text: '世界疫情 趋势'
+            },
+            tooltip: {
+                order: 'valueDesc',
+                trigger: 'axis'
+            },
+            xAxis: {
+                type: 'category',
+                nameLocation: 'middle'
+            },
+            yAxis: {
+                name: 'Number'
+            },
+            grid: {
+                right: 140
+            },
+            series: seriesList
+        };
+        myChart.setOption(option);
+    }
+
+    if (option && typeof option === 'object') {
+        myChart.setOption(option);
+    }
+
+</script>

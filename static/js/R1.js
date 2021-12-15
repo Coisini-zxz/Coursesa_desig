@@ -1,38 +1,29 @@
-var right1 = echarts.init(document.getElementById('l2'), "dark");
+var right1 = echarts.init(document.getElementById('r1'), "dark");
 
-var ROOT_PATH =
-  'https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples';
+var right1_option {
+	var _rawData = [];
+	run(_rawData);
+	
+};
 
-var right1_option;
 
-$.get(
-  ROOT_PATH + '/data/asset/data/life-expectancy-table.json',
-  function (_rawData) {
-    run(_rawData);
-  }
-);
-
+var option;
 function run(_rawData) {
   // var countries = ['Australia', 'Canada', 'China', 'Cuba', 'Finland', 'France', 'Germany', 'Iceland', 'India', 'Japan', 'North Korea', 'South Korea', 'New Zealand', 'Norway', 'Poland', 'Russia', 'Turkey', 'United Kingdom', 'United States'];
   const countries = [
-    '澳大利亚',
-    '巴西',
-    '俄罗斯',
-    '法国',
-    '韩国',	
-    '加拿大',
-    '美国',
-    '英国（含北爱尔兰）'
-  ]; //国家列表
-  
-  const datasetWithFilters = []; //数据集与过滤器
-  
-  const seriesList = []; //系列列表
-  
+    'Finland',
+    'France',
+    'Germany',
+    'Iceland',
+    'Norway',
+    'Poland',
+    'Russia',
+    'United Kingdom'
+  ];
+  const datasetWithFilters = [];
+  const seriesList = [];
   echarts.util.each(countries, function (country) {
-    var datasetId = 
-      'https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples' +
-      country;                                        //数据集id
+    var datasetId = 'dataset_' + country;
     datasetWithFilters.push({
       id: datasetId,
       fromDatasetId: 'dataset_raw',
@@ -40,12 +31,12 @@ function run(_rawData) {
         type: 'filter',
         config: {
           and: [
-            { dimension: 'Year', gte: 1950 }, //数据 起点 
+            { dimension: 'Year', gte: 1950 },
             { dimension: 'Country', '=': country }
           ]
         }
       }
-    });                                 //push数据
+    });
     seriesList.push({
       type: 'line',
       datasetId: datasetId,
@@ -70,7 +61,7 @@ function run(_rawData) {
         itemName: 'Year',
         tooltip: ['Income']
       }
-    }); //push数据
+    });
   });
   option = {
     animationDuration: 10000,
@@ -82,7 +73,7 @@ function run(_rawData) {
       ...datasetWithFilters
     ],
     title: {
-      text: '世界疫情发展 (2020.1.27-6.30)'
+      text: 'Income of Germany and France since 1950'
     },
     tooltip: {
       order: 'valueDesc',
@@ -93,7 +84,7 @@ function run(_rawData) {
       nameLocation: 'middle'
     },
     yAxis: {
-      name: 'Number'
+      name: 'Income'
     },
     grid: {
       right: 140
@@ -102,3 +93,5 @@ function run(_rawData) {
   };
   myChart.setOption(option);
 }
+
+option && myChart.setOption(option);

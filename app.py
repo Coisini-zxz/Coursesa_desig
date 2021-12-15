@@ -1,16 +1,13 @@
 from flask import Flask
+import utils
 from flask import jsonify
 from flask import render_template
 
-import utils
-
 app = Flask(__name__)
-
 
 @app.route('/')
 def hello_word():
     return render_template('main.html')
-
 
 @app.route("/l1")
 def get_l1_data():
@@ -38,7 +35,7 @@ def get_L2_data():
 @app.route('/c1')
 def get_c1_data():
     data = utils.C1_data()
-    return jsonify({'confirm':data[2],  'cure':data[3], 'dead':data[4]})
+    return jsonify({'confirm': data[2],  'cure': data[3], 'dead': data[4]})
 
 @app.route('/c2')
 def get_c2_data():
@@ -52,5 +49,25 @@ def gettime():
     return utils.get_time()
 
 
+@app.route('/r1')
+def get_r1_data():
+    data = utils.R1_data()
+    data_time, city, confirm = [], [], []
+    for a, b, k, v in data:
+        data_time.append(b.strftime("%Y-%m-%d"))
+        city.append(k)
+        confirm.append(int(v))
+    return jsonify({"confirm": confirm, "Country": city, "Year": data_time})
+
+# @app.route('/r2')
+# def get_r2_data():
+#     data = utils.R2_data()
+#     countries = []
+#     confirm = []
+#     for k, v in data:
+#         countries.append(k)
+#         confirm.append(int(v))
+#     return jsonify({"name": countries, "value": confirm})
+
 if __name__ == '__main__':
-   app.run(debug = True)
+    app.run(debug = True)

@@ -14,8 +14,8 @@ function gettime() {
 
 function get_c1_data() {
 	$.ajax({
-			url: '/c1',
-			success: function(data) {
+		url: '/c1',
+		success: function(data) {
 			$(".num h1").eq(0).text(data.confirm)
 			$(".num h1").eq(1).text(data.cure)
 			$(".num h1").eq(2).text(data.dead)
@@ -24,68 +24,68 @@ function get_c1_data() {
 	})
 }
 
-function get_c2_data(){
+function get_c2_data() {
 	$.ajax({
-			url: '/c2',
-			success: function(data) {
-				center_option.series[0].data = data.data
-				center.setOption(center_option)
-				
-		},
-			error: function(xhr, type, errorThrown) {}
-	})
-}
+		url: '/c2',
+		success: function(data) {
+			center_option.series[0].data = data.data
+			center.setOption(center_option)
 
-function get_l1_data() {
-    $.ajax({
-        url:"/l1",
-        success: function(data) {
-            left1_Option.xAxis[0].data=data.day
-            left1_Option.series[0].data=data.confirm
-            left1_Option.series[1].data=data.cure
-            left1_Option.series[2].data=data.dead
-            left1.setOption(left1_Option)
-        },
-        error: function(xhr, type, errorThrown) {
-
-        }
-    })
-}
-
-function get_l2_data() {
-    $.ajax({
-        url:"/l2",
-        success: function(data) {
-            left2_Option.xAxis[0].data=data.data_time
-            left2_Option.series[0].data=data.new_diagnosis
-            left2_Option.series[1].data=data.new_cure
-			left2_Option.series[2].data=data.new_death
-            left2.setOption(left2_Option)
-        },
-        error: function(xhr, type, errorThrown) {
-        }
-    })
-}
-
-function get_r1_data() {
-	$.ajax({
-			url: '/r1',
-			success: function(progress) {
-				ec_right1_option.series[0].data[0].value=progress
-				ec_right1.setOption(ec_right1_option)
 		},
 		error: function(xhr, type, errorThrown) {}
 	})
 }
 
+function get_l1_data() {
+	$.ajax({
+		url: "/l1",
+		success: function(data) {
+			left1_Option.xAxis[0].data = data.day
+			left1_Option.series[0].data = data.confirm
+			left1_Option.series[1].data = data.cure
+			left1_Option.series[2].data = data.dead
+			left1.setOption(left1_Option)
+		},
+		error: function(xhr, type, errorThrown) {
+
+		}
+	})
+}
+
+function get_l2_data() {
+	$.ajax({
+		url: "/l2",
+		success: function(data) {
+			left2_Option.xAxis[0].data = data.data_time
+			left2_Option.series[0].data = data.new_diagnosis
+			left2_Option.series[1].data = data.new_cure
+			left2_Option.series[2].data = data.new_death
+			left2.setOption(left2_Option)
+		},
+		error: function(xhr, type, errorThrown) {}
+	})
+}
+
+function get_r1_data() {
+	$.ajax({
+		url: "/r1",
+		success: function(data) {
+			right1_option._rawData[0].data = data
+			right1.setOption(right1_option)
+		},
+		error: function(xhr, type, errorThrown) {}
+	})
+}
+
+
 function get_r2_data() {
-    $.ajax({
-        url: "/r2",
-        success: function (data) {
-            ec_right2_option.series[0].data=data.kws;
-            ec_right2.setOption(ec_right2_option);
-        }
-    })
+	$.ajax({
+		url: "/r2",
+		success: function(data) {
+			right2_option.countries = data.kws;
+			right2.setOption(right2_option);
+		}
+	})
 }
 
 
@@ -94,9 +94,12 @@ get_l1_data()
 get_l2_data()
 get_c1_data()
 get_c2_data()
+get_r1_data()
 
-setInterval(gettime,300)
-setInterval(get_l1_data,600000)
-setInterval(get_l2_data,600000)
-setInterval(get_c1_data,600000)
-setInterval(get_c2_data,600000)
+
+setInterval(gettime, 300)
+setInterval(get_l1_data, 600000)
+setInterval(get_l2_data, 600000)
+setInterval(get_c1_data, 600000)
+setInterval(get_c2_data, 600000)
+setInterval(get_r1_data,600000)
