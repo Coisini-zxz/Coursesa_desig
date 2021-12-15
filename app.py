@@ -1,13 +1,16 @@
 from flask import Flask
-import utils
 from flask import jsonify
 from flask import render_template
 
+import utils
+
 app = Flask(__name__)
+
 
 @app.route('/')
 def hello_word():
     return render_template('main.html')
+
 
 @app.route("/l1")
 def get_l1_data():
@@ -40,9 +43,9 @@ def get_c1_data():
 @app.route('/c2')
 def get_c2_data():
     res = []
-    for tup in utils.get_c2_data():
-        res.append({"name":tup[0],"value":int(tup[1])})
-    return jsonify({"data":res})
+    for tup in utils.C2_data()[1:]:
+        res.append({"name": tup[1], "value": tup[2]})
+    return jsonify({"data": res})
 
 @app.route('/tim')
 def gettime():
@@ -51,6 +54,3 @@ def gettime():
 
 if __name__ == '__main__':
    app.run(debug = True)
-
-
-

@@ -31,7 +31,6 @@ function get_c2_data(){
 				center_option.series[0].data = data.data
 				center.setOption(center_option)
 				
-
 		},
 			error: function(xhr, type, errorThrown) {}
 	})
@@ -94,9 +93,10 @@ gettime()
 get_l1_data()
 get_l2_data()
 get_c1_data()
-// get_c2_data()
+get_c2_data()
 
 setInterval(gettime,300)
 setInterval(get_l1_data,600000)
 setInterval(get_l2_data,600000)
 setInterval(get_c1_data,600000)
+setInterval(get_c2_data,600000)

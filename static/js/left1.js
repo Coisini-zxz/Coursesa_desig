@@ -5,7 +5,7 @@ var left1_Option = {
 	title: {
 		text: "全国累计趋势",
 		textStyle: {
-		      fontSize: 11
+		      fontSize: 18
 		    },
 		left: 'left',
 	},

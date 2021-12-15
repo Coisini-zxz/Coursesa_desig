@@ -1,0 +1,205 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : Ali
+Source Server Version : 80018
+Source Host           : rm-2ze9ef54d26gq84puao.mysql.rds.aliyuncs.com:3306
+Source Database       : cov
+
+Target Server Type    : MYSQL
+Target Server Version : 80018
+File Encoding         : 65001
+
+Date: 2021-12-15 10:17:03
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- Table structure for `l2`
+-- ----------------------------
+DROP TABLE IF EXISTS `l2`;
+CREATE TABLE `l2` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `data_time` date DEFAULT NULL COMMENT '日期',
+  `new_diagnosis` int(100) DEFAULT NULL COMMENT '新增确诊',
+  `new_cure` int(100) DEFAULT NULL COMMENT '新增治愈',
+  `new_death` int(100) DEFAULT NULL COMMENT '新增死亡',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=174 DEFAULT CHARSET=utf8 COMMENT='新增确诊 \r\n新增治愈  \r\n新增死亡';
+
+-- ----------------------------
+-- Records of l2
+-- ----------------------------
+INSERT INTO `l2` VALUES ('1', '2020-01-10', '41', '2', '1');
+INSERT INTO `l2` VALUES ('2', '2020-01-11', '0', '4', '0');
+INSERT INTO `l2` VALUES ('3', '2020-01-12', '0', '1', '0');
+INSERT INTO `l2` VALUES ('4', '2020-01-13', '0', '0', '0');
+INSERT INTO `l2` VALUES ('5', '2020-01-14', '0', '0', '0');
+INSERT INTO `l2` VALUES ('6', '2020-01-15', '0', '5', '1');
+INSERT INTO `l2` VALUES ('7', '2020-01-16', '4', '3', '0');
+INSERT INTO `l2` VALUES ('8', '2020-01-17', '17', '4', '0');
+INSERT INTO `l2` VALUES ('9', '2020-01-18', '59', '5', '1');
+INSERT INTO `l2` VALUES ('10', '2020-01-19', '80', '1', '1');
+INSERT INTO `l2` VALUES ('11', '2020-01-20', '94', '0', '2');
+INSERT INTO `l2` VALUES ('12', '2020-01-21', '147', '3', '3');
+INSERT INTO `l2` VALUES ('13', '2020-01-22', '160', '1', '8');
+INSERT INTO `l2` VALUES ('14', '2020-01-23', '252', '5', '9');
+INSERT INTO `l2` VALUES ('15', '2020-01-24', '456', '4', '15');
+INSERT INTO `l2` VALUES ('16', '2020-01-25', '647', '11', '14');
+INSERT INTO `l2` VALUES ('17', '2020-01-26', '772', '2', '25');
+INSERT INTO `l2` VALUES ('18', '2020-01-27', '1839', '18', '26');
+INSERT INTO `l2` VALUES ('19', '2020-01-28', '1441', '11', '26');
+INSERT INTO `l2` VALUES ('20', '2020-01-29', '1728', '22', '38');
+INSERT INTO `l2` VALUES ('21', '2020-01-30', '1976', '46', '43');
+INSERT INTO `l2` VALUES ('22', '2020-01-31', '2103', '73', '46');
+INSERT INTO `l2` VALUES ('23', '2020-02-01', '2582', '84', '45');
+INSERT INTO `l2` VALUES ('24', '2020-02-02', '2837', '148', '57');
+INSERT INTO `l2` VALUES ('25', '2020-02-03', '3227', '161', '64');
+INSERT INTO `l2` VALUES ('26', '2020-02-04', '3897', '237', '66');
+INSERT INTO `l2` VALUES ('27', '2020-02-05', '3691', '263', '73');
+INSERT INTO `l2` VALUES ('28', '2020-02-06', '3146', '387', '73');
+INSERT INTO `l2` VALUES ('29', '2020-02-07', '3382', '492', '85');
+INSERT INTO `l2` VALUES ('30', '2020-02-08', '2585', '588', '87');
+INSERT INTO `l2` VALUES ('31', '2020-02-09', '3055', '619', '98');
+INSERT INTO `l2` VALUES ('32', '2020-02-10', '2478', '705', '107');
+INSERT INTO `l2` VALUES ('33', '2020-02-11', '2029', '722', '98');
+INSERT INTO `l2` VALUES ('34', '2020-02-12', '14158', '1165', '143');
+INSERT INTO `l2` VALUES ('35', '2020-02-13', '5004', '1044', '122');
+INSERT INTO `l2` VALUES ('36', '2020-02-14', '2632', '1347', '141');
+INSERT INTO `l2` VALUES ('37', '2020-02-15', '2006', '1303', '142');
+INSERT INTO `l2` VALUES ('38', '2020-02-16', '2059', '1421', '105');
+INSERT INTO `l2` VALUES ('39', '2020-02-17', '1922', '1686', '96');
+INSERT INTO `l2` VALUES ('40', '2020-02-18', '1822', '1800', '137');
+INSERT INTO `l2` VALUES ('41', '2020-02-19', '865', '1802', '113');
+INSERT INTO `l2` VALUES ('42', '2020-02-20', '472', '2070', '118');
+INSERT INTO `l2` VALUES ('43', '2020-02-21', '399', '2322', '108');
+INSERT INTO `l2` VALUES ('44', '2020-02-22', '649', '2215', '97');
+INSERT INTO `l2` VALUES ('45', '2020-02-23', '415', '1826', '150');
+INSERT INTO `l2` VALUES ('46', '2020-02-24', '527', '2589', '71');
+INSERT INTO `l2` VALUES ('47', '2020-02-25', '411', '2411', '52');
+INSERT INTO `l2` VALUES ('48', '2020-02-26', '460', '2741', '28');
+INSERT INTO `l2` VALUES ('49', '2020-02-27', '329', '3597', '44');
+INSERT INTO `l2` VALUES ('50', '2020-02-28', '465', '2845', '46');
+INSERT INTO `l2` VALUES ('51', '2020-02-29', '622', '2612', '34');
+INSERT INTO `l2` VALUES ('52', '2020-03-01', '206', '2862', '42');
+INSERT INTO `l2` VALUES ('53', '2020-03-02', '156', '2707', '32');
+INSERT INTO `l2` VALUES ('54', '2020-03-03', '124', '2667', '37');
+INSERT INTO `l2` VALUES ('55', '2020-03-04', '143', '2190', '32');
+INSERT INTO `l2` VALUES ('56', '2020-03-05', '145', '1683', '30');
+INSERT INTO `l2` VALUES ('57', '2020-03-06', '103', '1688', '28');
+INSERT INTO `l2` VALUES ('58', '2020-03-07', '46', '1666', '27');
+INSERT INTO `l2` VALUES ('59', '2020-03-08', '45', '1545', '23');
+INSERT INTO `l2` VALUES ('60', '2020-03-09', '20', '1300', '17');
+INSERT INTO `l2` VALUES ('61', '2020-03-10', '32', '1595', '21');
+INSERT INTO `l2` VALUES ('62', '2020-03-11', '25', '1329', '10');
+INSERT INTO `l2` VALUES ('63', '2020-03-12', '12', '1335', '8');
+INSERT INTO `l2` VALUES ('64', '2020-03-13', '31', '1440', '15');
+INSERT INTO `l2` VALUES ('65', '2020-03-14', '28', '1313', '10');
+INSERT INTO `l2` VALUES ('66', '2020-03-15', '29', '848', '14');
+INSERT INTO `l2` VALUES ('67', '2020-03-16', '39', '941', '14');
+INSERT INTO `l2` VALUES ('68', '2020-03-17', '35', '909', '11');
+INSERT INTO `l2` VALUES ('69', '2020-03-18', '84', '801', '8');
+INSERT INTO `l2` VALUES ('70', '2020-03-19', '65', '729', '3');
+INSERT INTO `l2` VALUES ('71', '2020-03-20', '116', '594', '9');
+INSERT INTO `l2` VALUES ('72', '2020-03-21', '82', '507', '6');
+INSERT INTO `l2` VALUES ('73', '2020-03-22', '103', '456', '9');
+INSERT INTO `l2` VALUES ('74', '2020-03-23', '146', '459', '7');
+INSERT INTO `l2` VALUES ('75', '2020-03-24', '99', '392', '3');
+INSERT INTO `l2` VALUES ('76', '2020-03-25', '114', '343', '6');
+INSERT INTO `l2` VALUES ('77', '2020-03-26', '119', '547', '6');
+INSERT INTO `l2` VALUES ('78', '2020-03-27', '134', '285', '3');
+INSERT INTO `l2` VALUES ('79', '2020-03-28', '127', '378', '5');
+INSERT INTO `l2` VALUES ('80', '2020-03-29', '107', '238', '5');
+INSERT INTO `l2` VALUES ('81', '2020-03-30', '99', '188', '3');
+INSERT INTO `l2` VALUES ('82', '2020-03-31', '84', '90', '6');
+INSERT INTO `l2` VALUES ('83', '2020-04-01', '93', '100', '7');
+INSERT INTO `l2` VALUES ('84', '2020-04-02', '77', '76', '4');
+INSERT INTO `l2` VALUES ('85', '2020-04-03', '75', '104', '5');
+INSERT INTO `l2` VALUES ('86', '2020-04-04', '55', '113', '3');
+INSERT INTO `l2` VALUES ('87', '2020-04-05', '75', '136', '2');
+INSERT INTO `l2` VALUES ('88', '2020-04-06', '66', '100', '0');
+INSERT INTO `l2` VALUES ('89', '2020-04-07', '89', '138', '1');
+INSERT INTO `l2` VALUES ('90', '2020-04-08', '89', '125', '2');
+INSERT INTO `l2` VALUES ('91', '2020-04-09', '56', '116', '1');
+INSERT INTO `l2` VALUES ('92', '2020-04-10', '81', '98', '5');
+INSERT INTO `l2` VALUES ('93', '2020-04-11', '96', '79', '0');
+INSERT INTO `l2` VALUES ('94', '2020-04-12', '115', '114', '2');
+INSERT INTO `l2` VALUES ('95', '2020-04-13', '99', '111', '0');
+INSERT INTO `l2` VALUES ('96', '2020-04-14', '49', '123', '1');
+INSERT INTO `l2` VALUES ('97', '2020-04-15', '52', '104', '0');
+INSERT INTO `l2` VALUES ('98', '2020-04-16', '352', '84', '1290');
+INSERT INTO `l2` VALUES ('99', '2020-04-17', '31', '101', '0');
+INSERT INTO `l2` VALUES ('100', '2020-04-18', '21', '72', '0');
+INSERT INTO `l2` VALUES ('101', '2020-04-19', '36', '66', '0');
+INSERT INTO `l2` VALUES ('102', '2020-04-20', '34', '76', '0');
+INSERT INTO `l2` VALUES ('103', '2020-04-21', '18', '54', '0');
+INSERT INTO `l2` VALUES ('104', '2020-04-22', '13', '98', '0');
+INSERT INTO `l2` VALUES ('105', '2020-04-23', '9', '78', '0');
+INSERT INTO `l2` VALUES ('106', '2020-04-24', '16', '121', '0');
+INSERT INTO `l2` VALUES ('107', '2020-04-25', '11', '80', '0');
+INSERT INTO `l2` VALUES ('108', '2020-04-26', '3', '108', '1');
+INSERT INTO `l2` VALUES ('109', '2020-04-27', '26', '92', '0');
+INSERT INTO `l2` VALUES ('110', '2020-04-28', '2', '58', '0');
+INSERT INTO `l2` VALUES ('111', '2020-04-29', '4', '53', '0');
+INSERT INTO `l2` VALUES ('112', '2020-04-30', '12', '52', '0');
+INSERT INTO `l2` VALUES ('113', '2020-05-01', '3', '58', '0');
+INSERT INTO `l2` VALUES ('114', '2020-05-02', '5', '33', '0');
+INSERT INTO `l2` VALUES ('115', '2020-05-03', '7', '75', '0');
+INSERT INTO `l2` VALUES ('116', '2020-05-04', '4', '108', '0');
+INSERT INTO `l2` VALUES ('117', '2020-05-05', '2', '74', '0');
+INSERT INTO `l2` VALUES ('118', '2020-05-06', '3', '64', '0');
+INSERT INTO `l2` VALUES ('119', '2020-05-07', '6', '56', '0');
+INSERT INTO `l2` VALUES ('120', '2020-05-08', '1', '76', '0');
+INSERT INTO `l2` VALUES ('121', '2020-05-09', '15', '87', '0');
+INSERT INTO `l2` VALUES ('122', '2020-05-10', '19', '44', '0');
+INSERT INTO `l2` VALUES ('123', '2020-05-11', '1', '32', '1');
+INSERT INTO `l2` VALUES ('124', '2020-05-12', '7', '28', '0');
+INSERT INTO `l2` VALUES ('125', '2020-05-13', '6', '26', '0');
+INSERT INTO `l2` VALUES ('126', '2020-05-14', '5', '23', '0');
+INSERT INTO `l2` VALUES ('127', '2020-05-15', '8', '24', '0');
+INSERT INTO `l2` VALUES ('128', '2020-05-16', '6', '14', '1');
+INSERT INTO `l2` VALUES ('129', '2020-05-17', '10', '19', '0');
+INSERT INTO `l2` VALUES ('130', '2020-05-18', '9', '7', '0');
+INSERT INTO `l2` VALUES ('131', '2020-05-19', '2', '7', '0');
+INSERT INTO `l2` VALUES ('132', '2020-05-20', '2', '9', '0');
+INSERT INTO `l2` VALUES ('133', '2020-05-21', '13', '11', '0');
+INSERT INTO `l2` VALUES ('134', '2020-05-22', '2', '4', '0');
+INSERT INTO `l2` VALUES ('135', '2020-05-23', '3', '6', '0');
+INSERT INTO `l2` VALUES ('136', '2020-05-24', '11', '9', '0');
+INSERT INTO `l2` VALUES ('137', '2020-05-25', '7', '10', '0');
+INSERT INTO `l2` VALUES ('138', '2020-05-26', '1', '7', '0');
+INSERT INTO `l2` VALUES ('139', '2020-05-27', '3', '11', '0');
+INSERT INTO `l2` VALUES ('140', '2020-05-28', '0', '5', '0');
+INSERT INTO `l2` VALUES ('141', '2020-05-29', '18', '10', '0');
+INSERT INTO `l2` VALUES ('142', '2020-05-30', '5', '4', '0');
+INSERT INTO `l2` VALUES ('143', '2020-05-31', '18', '6', '0');
+INSERT INTO `l2` VALUES ('144', '2020-06-01', '9', '12', '0');
+INSERT INTO `l2` VALUES ('145', '2020-06-02', '8', '3', '0');
+INSERT INTO `l2` VALUES ('146', '2020-06-03', '1', '7', '0');
+INSERT INTO `l2` VALUES ('147', '2020-06-04', '11', '10', '0');
+INSERT INTO `l2` VALUES ('148', '2020-06-05', '6', '6', '0');
+INSERT INTO `l2` VALUES ('149', '2020-06-06', '8', '5', '0');
+INSERT INTO `l2` VALUES ('150', '2020-06-07', '5', '10', '0');
+INSERT INTO `l2` VALUES ('151', '2020-06-08', '4', '9', '0');
+INSERT INTO `l2` VALUES ('152', '2020-06-09', '3', '8', '0');
+INSERT INTO `l2` VALUES ('153', '2020-06-10', '11', '6', '0');
+INSERT INTO `l2` VALUES ('154', '2020-06-11', '7', '7', '0');
+INSERT INTO `l2` VALUES ('155', '2020-06-12', '11', '6', '0');
+INSERT INTO `l2` VALUES ('156', '2020-06-13', '60', '3', '0');
+INSERT INTO `l2` VALUES ('157', '2020-06-14', '44', '7', '0');
+INSERT INTO `l2` VALUES ('158', '2020-06-15', '45', '7', '0');
+INSERT INTO `l2` VALUES ('159', '2020-06-16', '45', '3', '0');
+INSERT INTO `l2` VALUES ('160', '2020-06-17', '35', '6', '0');
+INSERT INTO `l2` VALUES ('161', '2020-06-18', '37', '4', '0');
+INSERT INTO `l2` VALUES ('162', '2020-06-19', '30', '5', '0');
+INSERT INTO `l2` VALUES ('163', '2020-06-20', '29', '4', '0');
+INSERT INTO `l2` VALUES ('164', '2020-06-21', '19', '1', '0');
+INSERT INTO `l2` VALUES ('165', '2020-06-22', '50', '6', '0');
+INSERT INTO `l2` VALUES ('166', '2020-06-23', '29', '7', '0');
+INSERT INTO `l2` VALUES ('167', '2020-06-24', '20', '6', '0');
+INSERT INTO `l2` VALUES ('168', '2020-06-25', '28', '6', '0');
+INSERT INTO `l2` VALUES ('169', '2020-06-26', '25', '7', '0');
+INSERT INTO `l2` VALUES ('170', '2020-06-27', '18', '9', '0');
+INSERT INTO `l2` VALUES ('171', '2020-06-28', '14', '17', '0');
+INSERT INTO `l2` VALUES ('172', '2020-06-29', '18', '7', '0');
+INSERT INTO `l2` VALUES ('173', '2020-06-30', '3', '6', '0');
