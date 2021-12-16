@@ -1,4 +1,4 @@
-var left2 = echarts.init(document.getElementById('l2'), "dark");
+var left2 = echarts.init(document.getElementById('l2'));
 
 var left2_Option = {
 	tooltip: {
@@ -19,7 +19,7 @@ var left2_Option = {
 	title: {
 		text: "全国新增趋势",
 		textStyle: {
-			color: 'white',
+		      fontSize: 18
 		},
 		left: 'left'
 	},

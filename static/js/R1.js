@@ -1,12 +1,12 @@
-var myChart = echarts.init(document.getElementById('r1'), "dark");
+var myChart = echarts.init(document.getElementById('r1'));
 
 var option;
 
 $.get(
-	'../static/json/data.json',
+	'../static/json/r1.json',
 	function(_rawData) {
 		run(_rawData);
-		console.log(_rawData)
+		// console.log(_rawData)
 	}
 );
 
@@ -81,7 +81,7 @@ function run(_rawData) {
 			...datasetWithFilters
 		],
 		title: {
-			text: '世界疫情 ----'
+			text: '其他国家疫情趋势(例)'
 		},
 		tooltip: {
 			order: 'valueDesc',

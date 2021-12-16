@@ -1,9 +1,4 @@
-import time
 import pymysql
-
-def get_time():
-    time_str =  time.strftime("%Y{}%m{}%d{} %X")
-    return time_str.format("年","月","日")     #因为直接写不支持直接识别中文，才用format写
 
 #return: 连接，游标
 def get_conn():
@@ -19,7 +14,6 @@ def get_conn():
     # 创建游标
     cursor = conn.cursor()# 执行完毕返回的结果集默认以元组显示
     return conn, cursor
-
 
 def close_conn(conn, cursor):
     cursor.close()
@@ -66,19 +60,5 @@ def L2_data():
   return res
 
 
-def R1_data():
-    sql = "SELECT * FROM `r1`"
-    res = query(sql)
-    return res
 
 
-def R2_data():
-    sql = "SELECT 国家, Cumulative_diagnosis FROM `r2`"
-    res = query(sql)
-    return res
-
-#返回最近的30条热搜
-def get_r2_data():
-    sql = 'select content from guonei_dynamic order by dt asc limit 30'
-    res = query(sql)
-    return res

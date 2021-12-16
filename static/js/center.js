@@ -1,4 +1,4 @@
-var center = echarts.init(document.getElementById('c2'), "dark");
+var center = echarts.init(document.getElementById('c2'));
 
 var center_option = {
     title: {

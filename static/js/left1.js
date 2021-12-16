@@ -1,4 +1,4 @@
-var left1 = echarts.init(document.getElementById('l1'), "dark");
+var left1 = echarts.init(document.getElementById('l1'));
 
 var left1_Option = {
 	//标题样式

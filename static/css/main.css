@@ -1,6 +1,6 @@
 body {
 	margin: 0;
-	background: #333;
+	background: #CCCCFF;
 }
 
 #title {
@@ -8,9 +8,9 @@ body {
 	width: 40%;
 	height: 8%;
 	top: 0; 
-	left: 30%;   /* 确定了width 和 left 会自动确定 right */
+	left: 25%;   /* 确定了width 和 left 会自动确定 right */
 	/* background: #3A7734  确定了body的背景色 这里就不用再指定背景色 */
-	color: white;   /* 字体颜色 */
+	color: black;   /* 字体颜色 */
 	font-size: 38px;  /* 字体大小 */
 	display: flex;  /* 弹性布局 */
 	align-items: center;  /* 水平方向 居中 */
@@ -20,18 +20,18 @@ body {
 #tim {
 	position: absolute;
 	height: 8%;
-	top: 5%;
+	top: 0;
 	right: 5%;
 	color: #3A7734;
-	font-size: 20px;
+	font-size: 25px;
 }
 
 #c1 {
 	position: absolute;
-	width: 40%;
+	width: 30%;
 	height: 20%;
 	top: 10%;
-	left: 30%;
+	left: 32%;
 }
 
 .num {
@@ -56,17 +56,17 @@ body {
 
 #c2 {
 	position: absolute;
-	width: 40%;
-	height: 60%;
+	width: 30%;
+	height: 50%;
 	top: 40%;
-	left: 30%;
+	left: 31%;
 }
 
 #l1 {
 	position: absolute;
 	width: 30%;
 	height: 45%;
-	top: 10%;
+	top: 5%;
 	left: 0%;
 }
 
@@ -80,16 +80,16 @@ body {
 
 #r1 {
 	position: absolute;
-	width: 30%;
+	width: 38%;
 	height: 45%;
-	top: 10%;
+	top: 5%;
 	right: 0%;
 }
 
 #r2 {
 	position: absolute;
-	width: 30%;
-	height: 45%;
-	top: 55%;
+	width: 40%;
+	height: 40%;
+	top: 50%;
 	right: 0%;
 }

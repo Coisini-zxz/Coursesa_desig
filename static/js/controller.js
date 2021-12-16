@@ -68,32 +68,16 @@ function get_l2_data() {
 
 
 
-function get_r2_data() {
-	$.ajax({
-		url: "/r2",
-		success: function(countries) {
-			for(var country of countries){
-			    right2_option.series[0].data.push({
-			        name:country.name,
-			        value:country.confirm
-			    })
-			}
-			right2.setOption(right2_option);
-		}
-	})
-}
-
-
-gettime()
+// gettime()
 get_l1_data()
 get_l2_data()
 get_c1_data()
 get_c2_data()
 
 
-setInterval(gettime, 300)
-setInterval(get_l1_data, 600000)
-setInterval(get_l2_data, 600000)
-setInterval(get_c1_data, 600000)
-setInterval(get_c2_data, 600000)
+// setInterval(gettime, 1000)
+setInterval(get_l1_data, 1000)
+setInterval(get_l2_data, 1000)
+setInterval(get_c1_data, 1000)
+setInterval(get_c2_data, 1000)
 
