@@ -48,26 +48,28 @@ def get_c2_data():
 def gettime():
     return utils.get_time()
 
-
 @app.route('/r1')
 def get_r1_data():
     data = utils.R1_data()
-    data_time, city, confirm = [], [], []
-    for a, b, k, v in data:
-        data_time.append(b.strftime("%Y-%m-%d"))
+    data_time = []
+    city = []
+    confirm = []
+    for i, d, k, v in data:
+        data_time.append(d.strftime("%Y-%m-%d"))
         city.append(k)
         confirm.append(int(v))
-    return jsonify({"confirm": confirm, "Country": city, "Year": data_time})
+    return jsonify({"confirm": confirm, "city": city, "time": data_time})
 
-# @app.route('/r2')
-# def get_r2_data():
-#     data = utils.R2_data()
-#     countries = []
-#     confirm = []
-#     for k, v in data:
-#         countries.append(k)
-#         confirm.append(int(v))
-#     return jsonify({"name": countries, "value": confirm})
+@app.route('/r2')
+def get_r2_data():
+    data = utils.R2_data()
+    countries = []
+    confirm = []
+    for k, v in data:
+        countries.append(k)
+        confirm.append(int(v))
+    return jsonify({"name": countries, "confirm": confirm})
 
 if __name__ == '__main__':
     app.run(debug = True)
+

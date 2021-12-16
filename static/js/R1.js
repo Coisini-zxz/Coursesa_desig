@@ -1,97 +1,105 @@
-var right1 = echarts.init(document.getElementById('r1'), "dark");
-
-var right1_option {
-	var _rawData = [];
-	run(_rawData);
-	
-};
-
+var myChart = echarts.init(document.getElementById('r1'), "dark");
 
 var option;
+
+$.get(
+	'../static/json/data.json',
+	function(_rawData) {
+		run(_rawData);
+		console.log(_rawData)
+	}
+);
+
 function run(_rawData) {
-  // var countries = ['Australia', 'Canada', 'China', 'Cuba', 'Finland', 'France', 'Germany', 'Iceland', 'India', 'Japan', 'North Korea', 'South Korea', 'New Zealand', 'Norway', 'Poland', 'Russia', 'Turkey', 'United Kingdom', 'United States'];
-  const countries = [
-    'Finland',
-    'France',
-    'Germany',
-    'Iceland',
-    'Norway',
-    'Poland',
-    'Russia',
-    'United Kingdom'
-  ];
-  const datasetWithFilters = [];
-  const seriesList = [];
-  echarts.util.each(countries, function (country) {
-    var datasetId = 'dataset_' + country;
-    datasetWithFilters.push({
-      id: datasetId,
-      fromDatasetId: 'dataset_raw',
-      transform: {
-        type: 'filter',
-        config: {
-          and: [
-            { dimension: 'Year', gte: 1950 },
-            { dimension: 'Country', '=': country }
-          ]
-        }
-      }
-    });
-    seriesList.push({
-      type: 'line',
-      datasetId: datasetId,
-      showSymbol: false,
-      name: country,
-      endLabel: {
-        show: true,
-        formatter: function (params) {
-          return params.value[3] + ': ' + params.value[0];
-        }
-      },
-      labelLayout: {
-        moveOverlap: 'shiftY'
-      },
-      emphasis: {
-        focus: 'series'
-      },
-      encode: {
-        x: 'Year',
-        y: 'Income',
-        label: ['Country', 'Income'],
-        itemName: 'Year',
-        tooltip: ['Income']
-      }
-    });
-  });
-  option = {
-    animationDuration: 10000,
-    dataset: [
-      {
-        id: 'dataset_raw',
-        source: _rawData
-      },
-      ...datasetWithFilters
-    ],
-    title: {
-      text: 'Income of Germany and France since 1950'
-    },
-    tooltip: {
-      order: 'valueDesc',
-      trigger: 'axis'
-    },
-    xAxis: {
-      type: 'category',
-      nameLocation: 'middle'
-    },
-    yAxis: {
-      name: 'Income'
-    },
-    grid: {
-      right: 140
-    },
-    series: seriesList
-  };
-  myChart.setOption(option);
+	// var countries = ['Australia', 'Canada', 'China', 'Cuba', 'Finland', 'France', 'Germany', 'Iceland', 'India', 'Japan', 'North Korea', 'South Korea', 'New Zealand', 'Norway', 'Poland', 'Russia', 'Turkey', 'United Kingdom', 'United States'];
+	const countries = [
+		'澳大利亚',
+		'巴西',
+		'俄罗斯',
+		'法国',
+		'韩国',
+		'加拿大',
+		'美国',
+		'日本',
+		'英国（含北爱尔兰）'
+	];
+
+	const datasetWithFilters = [];
+	const seriesList = [];
+	echarts.util.each(countries, function(country) {
+		var datasetId = 'dataset_' + country;
+		datasetWithFilters.push({
+			id: datasetId,
+			fromDatasetId: 'dataset_raw',
+			transform: {
+				type: 'filter',
+				config: {
+					and: [{
+							dimension: 'Year',
+							gte: 20200127
+						},
+						{
+							dimension: 'Country',
+							'=': country
+						}
+					]
+				}
+			}
+		});
+		seriesList.push({
+			type: 'line',
+			datasetId: datasetId,
+			showSymbol: false,
+			name: country,
+			endLabel: {
+				show: true,
+				formatter: function(params) {
+					return params.value[1] + ': ' + params.value[0];
+				}
+			},
+			labelLayout: {
+				moveOverlap: 'shiftY'
+			},
+			emphasis: {
+				focus: 'series'
+			},
+			encode: {
+				x: 'Year',
+				y: 'Income',
+				label: ['Country', 'Income'],
+				itemName: 'Year',
+				tooltip: ['Income']
+			}
+		});
+	});
+	option = {
+		animationDuration: 10000,
+		dataset: [{
+				id: 'dataset_raw',
+				source: _rawData
+			},
+			...datasetWithFilters
+		],
+		title: {
+			text: '世界疫情 ----'
+		},
+		tooltip: {
+			order: 'valueDesc',
+			trigger: 'axis'
+		},
+		xAxis: {
+			type: 'category',
+			nameLocation: 'middle'
+		},
+		yAxis: {
+			name: 'Number'
+		},
+		grid: {
+			right: 140
+		},
+		series: seriesList
+	};
+	myChart.setOption(option);
 }
 
 option && myChart.setOption(option);
