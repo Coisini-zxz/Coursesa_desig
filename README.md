@@ -28,11 +28,11 @@
 
 
 四. 安装相关依赖
-    执行 pip install -r requirements.txt  即可
-    注: (1) 需要更改数据库user/password  本例直接导入SQL_tables内的sql文件即可 不需要重写sql表
-        (2) json数据转换
-               (2.1): 利用 Flask的jsonify
-               (2.2): 利用 json模块 eg ---> test.py
+    执行 pip install -r requirements.txt  即可  
+    注: (1) 需要更改数据库user/password  本例直接导入SQL_tables内的sql文件即可 不需要重写sql表  
+        (2) json数据转换  
+               (2.1): 利用 Flask的jsonify  
+               (2.2): 利用 json模块 eg ---> test.py  
 
 
 五. 运行
